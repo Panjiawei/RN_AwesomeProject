@@ -35,6 +35,21 @@ export default class ChatScreen extends Component {
                     describe: '那些让你“红”运当头的好物',
                     price: '9.9元起',
                 },
+                {
+                    title: '新年一点红，幸运一整年',
+                    describe: '那些让你“红”运当头的好物',
+                    price: '9.9元起',
+                },
+                {
+                    title: '新年一点红，幸运一整年',
+                    describe: '那些让你“红”运当头的好物',
+                    price: '9.9元起',
+                },
+                {
+                    title: '新年一点红，幸运一整年',
+                    describe: '那些让你“红”运当头的好物',
+                    price: '9.9元起',
+                },
             ]
         };
     }
@@ -66,7 +81,7 @@ export default class ChatScreen extends Component {
                     data={this.state.topic}
                     keyExtractor={(item, index) => index}
                     renderItem={this.renderTopicItem}
-                    ItemSeparatorComponent={this._separator}
+                    // ItemSeparatorComponent={this._separator}
                     horizontal={false}
                     showsHorizontalScrollIndicator={false}
                     refreshing={false}
@@ -85,8 +100,8 @@ export default class ChatScreen extends Component {
 
     renderTopicItem = ({ item }) => {
         return (
-            <TouchableOpacity style={styles.topicItem}>
-                <Image source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
+            <TouchableOpacity style={styles.topicItem} onPress={()=>this.onck()}>
+                <Image source={{uri: 'http://ww3.sinaimg.cn/large/610dc034jw1fasakfvqe1j20u00mhgn2.jpg'}}
                        style={styles.topicImg}/>
                 <View style={styles.topicContainer}>
                     <View style={styles.topicText}>
@@ -102,6 +117,12 @@ export default class ChatScreen extends Component {
     _separator = () => {
         return <View style={{height:2,backgroundColor:'yellow'}}/>;
     }
+
+    onck(){
+
+        this.props.navigation.navigate('five')
+    }
+
 
 
 }
@@ -134,20 +155,26 @@ const styles = StyleSheet.create({
         padding:15,
     },
     topicItem: {
-        width: width*0.7,
-        marginLeft:15,
+        marginTop:15,
+        paddingTop:15,
+        paddingLeft:15,
+        paddingRight:15,
+        paddingBottom:15,
+        backgroundColor:'#f3f3f4'
+
     },
     topicImg: {
-        width: width*0.7,
-        height: width*0.4,
+        height: width*0.5,
         borderWidth:0.5,
         borderColor:'#cdcdcd',
-        borderRadius:2,
+        borderRadius:5,
+        resizeMode: 'contain'
     },
     topicContainer:{
         flexDirection: 'row',
-        justifyContent:'space-between',
+        justifyContent:'center',
         marginTop:10,
+        backgroundColor:'#f3f3f4',
     },
     topicTitle:{
         fontSize:16,
@@ -169,7 +196,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         flexDirection: 'column',
         alignItems: 'stretch',
-        backgroundColor: '#FFFFFF',
+        backgroundColor:'#f3f3f4',
 
     },
 

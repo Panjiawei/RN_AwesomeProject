@@ -46,7 +46,7 @@ export default class Buttons extends Component {
                         alignItems: 'center',
                         justifyContent: 'center'
                     },{backgroundColor :bj}]}>
-                        <Text style={{color: '#FFF', fontSize: 25,}}>{this.props.text}</Text>
+                        <Text style={{color: '#FFF', fontSize: 25,}}>{text}</Text>
                     </View>
 
                 </TouchableOpacity>

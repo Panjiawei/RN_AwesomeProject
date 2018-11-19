@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, TextInput,TouchableOpacity,Button} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Button} from 'react-native';
 
 
 const instructions = Platform.select({
@@ -19,30 +19,30 @@ const instructions = Platform.select({
 
 type Props = {};
 
-import  Buttons from './testsApp/compoment/Buttons';
+import Buttons from './testsApp/compoment/Buttons';
 import * as Dimensions from "react-native/Libraries/Utilities/Dimensions";
 
 
 // var {width,height}=Dimensions.get('window');
 
 import {StackNavigator} from 'react-navigation'
+
 export default class App extends Component<Props> {
 
     static navigationOptions = {
         title: 'Welcome',
-       // headerStyle:
+        // headerStyle:
     };
 
 
-    _onPressButton=()=> {
-       alert('You tapped the button!')
+    _onPressButton = () => {
+        alert('You tapped the button!')
     };
 
     constructor(props) {
         super(props);
         this.state = {text: ''};
     }
-
 
 
     render() {
@@ -59,7 +59,7 @@ export default class App extends Component<Props> {
                 </View>
                 <View style={styles.cont}>
                     <Image source={require('./android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png')}
-                           style={{width: 120, height: 120,marginTop:20, borderRadius: 100, alignItems: 'center'}}/>
+                           style={{width: 120, height: 120, marginTop: 20, borderRadius: 100, alignItems: 'center'}}/>
                 </View>
                 <View style={{height: 60, flexDirection: 'row'}}>
 
@@ -119,25 +119,26 @@ export default class App extends Component<Props> {
                 <View style={{height: 1, backgroundColor: '#F28B05', marginLeft: 15, marginRight: 15}}/>
 
 
-
                 {/*<TouchableOpacity onPress={this._onPressButton}>*/}
-                    {/*<View style={{*/}
-                        {/*height: 50,*/}
-                        {/*backgroundColor: '#F28B05',*/}
-                        {/*borderRadius: 30,*/}
-                        {/*marginRight: 20,*/}
-                        {/*marginLeft: 20,*/}
-                        {/*marginTop: 80,*/}
-                        {/*alignItems: 'center',*/}
-                        {/*justifyContent: 'center'*/}
-                    {/*}}>*/}
-                        {/*<Text style={{color: '#FFF', fontSize: 25,}}>登录</Text>*/}
-                    {/*</View>*/}
+                {/*<View style={{*/}
+                {/*height: 50,*/}
+                {/*backgroundColor: '#F28B05',*/}
+                {/*borderRadius: 30,*/}
+                {/*marginRight: 20,*/}
+                {/*marginLeft: 20,*/}
+                {/*marginTop: 80,*/}
+                {/*alignItems: 'center',*/}
+                {/*justifyContent: 'center'*/}
+                {/*}}>*/}
+                {/*<Text style={{color: '#FFF', fontSize: 25,}}>登录</Text>*/}
+                {/*</View>*/}
 
                 {/*</TouchableOpacity>*/}
 
 
-                <Buttons text="确定"bj="#F28B05" onclik={()=>{alert("被点击了！wooiwows")}}/>
+                <Buttons text="确定" bj="#F28B05" onclik={() => {
+                    alert("被点击了！wooiwows")
+                }}/>
 
                 <Button title='确定' onPress={() => this.props.navigation.navigate('Chat')}/>
             </View>

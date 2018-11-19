@@ -20,13 +20,13 @@
 
 @implementation AwesomeProjectTests
 
-- (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
+- (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))five
 {
-  if (test(view)) {
+  if (five(view)) {
     return YES;
   }
   for (UIView *subview in [view subviews]) {
-    if ([self findSubviewInView:subview matching:test]) {
+    if ([self findSubviewInView:subview matching:five]) {
       return YES;
     }
   }
